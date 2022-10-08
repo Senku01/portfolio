@@ -13,14 +13,14 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>Responsive portfolio website - CrypticalCoder</title>
+    <title>Responsive portfolio website - Vignesh</title>
 </head>
 <body>
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
         <nav class="nav container padd-15">
             <a href="#" class="nav-logo">
-                <h2>Vignesh</h2>
+                <h2>Vignesh P</h2>
             </a>
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav nav-list">
@@ -31,15 +31,18 @@
                         <a href="#about" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#project" class="nav-link">Projects</a>
+                        <a href="#portfolio" class="nav-link">Projects</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="#contact" class="nav-link">Contact</a>
-                    </li>
+                    </li> -->
                 </ul>
+                <div class="nav-close" id="nav-close">
+                    <i class="lni lni-close"></i>
+                </div>
             </div>
             <div class="nav-btns">
-                <i class="lni lni-pallet change-theme" id="theme-button"></i>
+                <!-- <i class="lni lni-pallet change-theme" id="theme-button"></i> -->
                 <div class="nav-toggle" id="nav-toggle">
                     <i class="lni lni-grid-alt"></i>
 
@@ -56,13 +59,14 @@
             <div class="container">
                 <div class="intro"></div>
                 <img src="assets/img/avatar-1.svg" alt="Temp">
-                <h1>Vignesh</h1>
-                <span>I'm a <span class="info-text">Front-End Developer</span></span>
+                <h1>Vignesh P</h1>
+                <span>I'm a <span class="info-text">Full-Stack Developer
+                </span></span>
                 <ul class="social-icons">
-                    <li><a href="#"><i class="lni lni-github-original"></i></a></li>
-                    <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
+                    <li><a href="https://github.com/Senku01"><i class="lni lni-github-original"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/vignesh-p-57034a1a1/"><i class="lni lni-linkedin-original"></i></a></li>
                 </ul>
-                <div>
+                <div class="hire">
                     <a href="#" class="btn btn-default"> Hire me</a>
                 </div>
                 <div class="scrool-down">
@@ -102,14 +106,28 @@
                                         <div class="skill-item">
                                             <h4>Development</h4>
                                             <div class="progress">
-                                                <div class="progress-in" style="width: 95%; background: yellow;"></div>
-                                                <div class="skill-percent">95%</div>
+                                                <div class="progress-in" style="width: 85%; background: yellow;"></div>
+                                                <div class="skill-percent">85%</div>
                                             </div>
                                             <div class="skill-item">
-                                                <h4>Security</h4>
+                                                <h4>Web Application Pentesting</h4>
                                                 <div class="progress">
-                                                    <div class="progress-in" style="width: 50%; background: yellow;"></div>
+                                                    <div class="progress-in" style="width: 50%; background: purple;"></div>
                                                     <div class="skill-percent">50%</div>
+                                                </div>
+                                            </div>
+                                            <div class="skill-item">
+                                                <h4>CTF</h4>
+                                                <div class="progress">
+                                                    <div class="progress-in" style="width: 50%; background: purple;"></div>
+                                                    <div class="skill-percent">50%</div>
+                                                </div>
+                                            </div>
+                                            <div class="skill-item">
+                                                <h4>Open Source Contribution</h4>
+                                                <div class="progress">
+                                                    <div class="progress-in" style="width: 30%; background: red;"></div>
+                                                    <div class="skill-percent">30%</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -203,25 +221,25 @@
                 <div class="row">
                     <div class="portfolio-filter padd-15">
                         <div class="portfolio-filter-inner">
-                            <button type="button" class="active">All</button>
-                            <button type="button">Html/Css</button>
-                            <button type="button">Full-Stack</button>
+                            <button type="button" class="active" data-filter="all">All</button>
+                            <button type="button" data-filter="html/css">Html/Css</button>
+                            <button type="button" data-filter="full-stack">Full-Stack</button>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="portfolio-item padd-15">
-                        <div class="portfolio-item-inner">
+                    <div class="portfolio-item padd-15" data-category="full-stack">
+                        <div class="portfolio-item-inner" >
                             <div class="portfolio-item-thumbnail">
                                 <img src="assets/img/1.svg" alt="">
                                 <div class="mask"></div>
                             </div>
                             <span class="term">Firebase, Full-Stack</span> 
-                            <h3 class="portfolio-item-title">Amazon Clone</h3>
-                            <span class="more-button">&hellip;</span>
+                            <h3 class="portfolio-item-title">Blog-Page</h3>
+                            <a href="https://github.com/Senku01/Blog-page" class="more-button">...</a>
                         </div>
                     </div>
-                    <div class="portfolio-item padd-15">
+                    <div class="portfolio-item padd-15" data-category="full-stack">
                         <div class="portfolio-item-inner">
                             <div class="portfolio-item-thumbnail">
                                 <img src="assets/img/2.svg" alt="">
@@ -229,18 +247,18 @@
                             </div>
                             <span class="term">Firebase, Full-Stack</span> 
                             <h3 class="portfolio-item-title">Amazon Clone</h3>
-                            <span class="more-button">&hellip;</span>
+                            <a href="https://github.com/Senku01/Amazon-Clone-React" class="more-button">...</a>
                         </div>
                     </div>
-                    <div class="portfolio-item padd-15">
+                    <div class="portfolio-item padd-15" data-category="html/css">
                         <div class="portfolio-item-inner">
                             <div class="portfolio-item-thumbnail">
                                 <img src="assets/img/3.svg" alt="">
                                 <div class="mask"></div>
                             </div>
                             <span class="term">Firebase, Javascript</span> 
-                            <h3 class="portfolio-item-title">Amazon Clone</h3>
-                            <span class="more-button">&hellip;</span>
+                            <h3 class="portfolio-item-title">Amazon Clone2.0</h3>
+                            <a href="https://github.com/Senku01/Amazon-clone" class="more-button">...</a>
                         </div>
                     </div>
                 </div>
@@ -251,9 +269,28 @@
         <!--=============== Blog ===============-->
         
         <!--=============== Contact ===============-->
-        
+        <!-- <section class="contact section">
+            <div class="container">
+                <h2 class="section-title padd-15">Contact Me</h2>
+                <div class="row">
+                    <div class="contact-box padd-15">
+                        <div class="contact-data">
+                            <div class="contact-information">
+                                <h3 class="contact-subtitle"></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
         <!--=============== Footer ===============-->
-        
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-text padd-15">
+                    <p>&copy; VigneshP</p>
+                </div>
+            </div>
+        </footer>
     </main>
     <!--=============== Theme Customize ===============-->
     
