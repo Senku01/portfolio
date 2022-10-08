@@ -52,12 +52,26 @@
     /*========== Scroll Bar ==========*/
     
     /*========== Responsive Typography ==========*/
-    
+    @media screen and (max-width:992px) {
+      :root
+      {
+        --h1-font-size: 1.75rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1rem;
+        --normal-font-size: .938rem;
+        --small-font-size:.813rem;
+
+
+      }
+    }
     /*========== Base ==========*/
   *{
   margin:0;
   padding:0;
   box-sizing:border-box;
+  }
+  html{
+    scroll-behavior: smooth;
   }
   body,
   button,
@@ -99,6 +113,10 @@
     margin-right: auto;
     overflow: hidden;
   }
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   .padd-15{
     padding-left: 15px;
@@ -113,12 +131,17 @@
   {
     font-size: 2.25rem;
     margin-left: var(--m-0-75);
+    margin-bottom: var(--m-2-5);
   }
     /*========== Buttons ==========*/
   .btn{
     padding: 0.75rem 2rem;
     line-height: 1;
     border-radius: var(--border-radius);
+  }
+  .hire{
+    display: flex;
+    justify-content: center;
   }
   .btn:focus{
     outline: 0;
@@ -195,7 +218,13 @@
   }
   .nav-link:hover{
     color: var(--color-primary);
-
+  }
+  .nav-close{
+    font-size: 1rem;
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    cursor: pointer;
   }
   .nav-btns{
     display: inline-flex;
@@ -212,6 +241,7 @@
     font-size: 1.2rem;
     cursor: pointer;
   }
+  .nav-close,
   .nav-toogle{
     display: none;
   }
@@ -228,6 +258,9 @@
     background-color: var(--color-primary);
     border-radius: 50%;
   }
+  .scroll-header{
+    box-shadow: 0 1px 4px rgba(165, 125, 125,0.02);
+  }
     /*========== Home ==========*/
   .home{
     display: flex;
@@ -236,6 +269,13 @@
     height: 100vh;
     min-height: 100vh;
   }
+  .social-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+    flex-wrap: nowrap;
+  }
   .home .intro{
     max-width: 540px;
     text-align: center;
@@ -243,7 +283,7 @@
   .home .intro img{
     margin-bottom: var(--m-1);
   }
-  .home .intro .social-links{
+  .home .intro .social-icons{
     margin-top: var(--m-1-5);
     margin-bottom: var(--m-2);
   }
@@ -481,6 +521,92 @@
       max-width: 33.33%;
       margin-bottom: var(--m-1-5);
     }
+    .portfolio-item.hide
+    {
+      display: none;
+    }
+    .portfolio-item.show-menu{
+      display: block;
+      animation: showItem 0.5s ease;
+    }
+    @keyframes showItem
+    {
+      0%{
+        transform: scale(0.6);
+        opacity: 0;
+      }
+      100%{
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    .portfolio-item-inner
+    {
+      position: relative;
+      overflow: hidden;
+    }
+    .portfolio-item .mask
+    {
+      background: rgb(0, 0,0,.9);
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: 0.3s;
+    }
+    .portfolio-item-inner:hover .mask{
+      opacity: 0.9;
+    }
+    .portfolio-item .term{
+      columns: #fff;
+      background: var(--color-primary);
+      border-bottom-left-radius: 0.98rem;
+      border-bottom-right-radius: 0.98rem;
+      position: absolute;
+      top: 0;
+      left: var(--m-1-5);
+      font-size: var(--small-font-size);
+      display: inline-block;
+      padding: 0.19rem 0.625rem;
+      transform: translateY(-40px);
+      transition: 0.3s;
+    }
+    .portfolio-item h3{
+      color:#fff;
+      font-size: 1.25rem;
+      margin: 0 0 0.9rem;
+      padding: 0 1.25rem;
+      position: absolute;
+      top: 3.75rem;
+      transition: 0.3s;
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    .portfolio-item .more-button
+    {
+      columns: #fff;
+      position: absolute;
+      bottom: var(--m-1-5);
+      left: var(--m-1-5);
+      font-size: 1.6rem;
+      display: block;
+      background:var(--color-primary);
+      height: 2.5rem;
+      width: 2.5rem;
+      cursor: pointer;      
+      border-radius: 50%;
+      text-align: center;
+      line-height: 28px;
+      transition:0.3s;
+      opacity: 0;
+    }
+    .portfolio-item-inner:hover h3, .portfolio-item-inner:hover a
+    {
+      opacity: 1;
+      transform: translateY(0);
+    }
     /*========== Testimonial ==========*/
     
     /*========== Blog ==========*/
@@ -488,7 +614,12 @@
     /*========== Contact ==========*/
     
     /*========== Footer ==========*/
-    
+    .footer{
+      padding: 60px 0;
+    }
+    .footer-text{
+      text-align: center;
+    }
     /*========== Customize Theme ==========*/
     
     /*========== Media Queries ==========*/
@@ -498,17 +629,97 @@
     }
     @media only screen and (max-width:968px)
     {
+      .about-content,
+      .about-img
+      {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      .about-img{
+        text-align: center;
+        margin-bottom: var(--m-2-5);
+      }
       
+
     }
     @media only screen and (max-width:768px)
     {
-      
+      body{
+        margin: var(--header-height) 0 0 0;
+      }
+      .container{
+        max-width: 568px;
+      }
+      .nav{
+          height: var(--header-height);
+      }
+      .nav-list{
+        flex-direction: column; 
+        row-gap: 1.5rem;
+      }
+      .nav-menu
+      {
+        position: fixed;
+        background:var(--color-white);
+        width: 80%;
+        height: 100%;
+        top: 0;
+        right: -100%;
+        padding: 4rem 0 0 3rem;
+        border-radius: 1rem 0 0 3rem;
+        z-index: 100;
+        transition: .3s;
+      }
+      .show-menu{
+        right: 0;
+      }    
+      .nav-close,
+      .nab-toggle{
+        display: inline-flex;
+      }
+      .education,
+      .portfolio,
+      .experience,
+      .about-content .about-text,
+      .about-content .skills
+      {
+        flex:  0 0 100%;
+        max-width: 100%; 
+      }
+      .fact-item,.portfolio-item{
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+      .education,.about-content, 
+      .about-text
+      {
+         margin-bottom: var(--m-2-5);
+      }
     }
     @media only screen and (max-width:576px)
     {
-      
+      .portfolio-item
+      {
+        flex: 0 0 100%;
+        max-width: 100%; 
+      }
+      .portfolio-item-inner{
+        max-width: 360px;
+        margin: 0 auto;
+      }
+      .timeline{
+        padding: 25px 20px;
+      }
+      .timeline .timeline-item
+      {
+        padding: 35px;
+        padding-bottom: 20px;
+      }
     }
     @media only screen and (max-width:320px)
     {
-      
+      .fact-item{
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
     }
